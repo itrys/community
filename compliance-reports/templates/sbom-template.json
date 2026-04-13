@@ -1,0 +1,33 @@
+{
+  "spdxVersion": "SPDX-2.3",
+  "dataLicense": "CC0-1.0",
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "name": "{PROJECT_NAME}",
+  "documentNamespace": "https://itrys.org/sbom/{PROJECT_NAME}/{VERSION}",
+  "creationInfo": {
+    "created": "{YYYY-MM-DDTHH:MM:SSZ}",
+    "creators": [
+      "Tool: ITrs-SBOM-Generator",
+      "Organization: ITrs"
+    ]
+  },
+  "packages": [
+    {
+      "SPDXID": "SPDXRef-Package-Primary",
+      "name": "{PROJECT_NAME}",
+      "versionInfo": "{VERSION}",
+      "downloadLocation": "{REPO_URL}",
+      "licenseConcluded": "{LICENSE}",
+      "licenseDeclared": "{LICENSE}",
+      "copyrightText": "Copyright (c) {YEAR} {COPYRIGHT_HOLDER}",
+      "filesAnalyzed": true
+    }
+  ],
+  "relationships": [
+    {
+      "spdxElementId": "SPDXRef-DOCUMENT",
+      "relationshipType": "DESCRIBES",
+      "relatedSpdxElement": "SPDXRef-Package-Primary"
+    }
+  ]
+}

@@ -1,0 +1,207 @@
+name: 项目入驻申请
+description: 申请将开源项目入驻 ITrs 组织
+title: "[入驻申请] "
+labels: ["project-proposal", "rfc"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢你选择 ITrs！请认真填写以下信息，我们将根据 [GOVERNANCE.md](../GOVERNANCE.md) 中的准入标准进行审核。
+
+  - type: input
+    id: project-name
+    attributes:
+      label: 项目名称
+      description: 项目的正式名称
+      placeholder: "例如：ITrys CLI"
+    validations:
+      required: true
+
+  - type: input
+    id: project-url
+    attributes:
+      label: 项目仓库地址
+      description: 当前项目的托管地址（GitHub/Gitee/自托管等）
+      placeholder: "https://github.com/your-org/your-project"
+    validations:
+      required: true
+
+  - type: input
+    id: project-website
+    attributes:
+      label: 项目官网（选填）
+      description: 项目的主页或文档站点
+      placeholder: "https://your-project.dev"
+
+  - type: textarea
+    id: project-description
+    attributes:
+      label: 项目简介
+      description: 用 2-3 句话描述你的项目是做什么的，解决什么问题
+      placeholder: "本项目是一个……，旨在解决……问题，面向……用户。"
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem-statement
+    attributes:
+      label: 解决的问题
+      description: 项目解决了什么痛点？目标用户是谁？
+    validations:
+      required: true
+
+  - type: dropdown
+    id: license
+    attributes:
+      label: 开源许可证
+      description: 项目当前使用的开源许可证
+      options:
+        - MIT
+        - Apache-2.0
+        - GPL-2.0
+        - GPL-3.0
+        - LGPL-2.1
+        - LGPL-3.0
+        - BSD-2-Clause
+        - BSD-3-Clause
+        - MPL-2.0
+        - 其他（请在下方说明）
+    validations:
+      required: true
+
+  - type: input
+    id: license-other
+    attributes:
+      label: 其他许可证（选填）
+      description: 如上一步选择了"其他"，请在此说明
+      placeholder: "例如：AGPL-3.0"
+
+  - type: dropdown
+    id: business-model
+    attributes:
+      label: 商业模式
+      description: 项目是否采用商业友好模式？详见 GOVERNANCE.md
+      options:
+        - 纯开源（无商业版本）
+        - Open Core（开源基础 + 闭源高级特性）
+        - 托管服务/SaaS
+        - 定制开发
+        - 双许可（Dual License）
+        - 教育/科研开源
+        - 其他（请在下方说明）
+    validations:
+      required: true
+
+  - type: textarea
+    id: business-model-detail
+    attributes:
+      label: 商业模式说明（选填）
+      description: |
+        如采用商业友好模式，请说明：
+        1. 开源版与付费版的边界
+        2. 开源版是否可独立构建运行
+        3. 功能对比（或提供链接）
+
+  - type: checkboxes
+    id: is-fork
+    attributes:
+      label: 派生项目声明
+      options:
+        - label: 本项目是独立开发，非派生项目
+          required: false
+        - label: 本项目是增强型派生项目，已满足去 fork 化要求
+          required: false
+
+  - type: textarea
+    id: fork-detail
+    attributes:
+      label: 派生项目说明（选填）
+      description: |
+        如为派生项目，请说明：
+        1. 原项目地址
+        2. 本项目的原创性增强内容
+        3. 是否已在 README 中致谢原项目
+
+  - type: textarea
+    id: tech-stack
+    attributes:
+      label: 技术栈
+      description: 项目使用的主要编程语言、框架和工具
+      placeholder: "语言：Go / 框架：Gin / 数据库：PostgreSQL / 工具：Docker"
+    validations:
+      required: true
+
+  - type: textarea
+    id: current-status
+    attributes:
+      label: 项目当前状态
+      description: |
+        描述项目当前的成熟度：
+        - 已发布版本号
+        - 是否有活跃用户
+        - CI/CD 状态
+        - 测试覆盖率（如适用）
+
+  - type: textarea
+    id: roadmap
+    attributes:
+      label: 路线图
+      description: 未来 6-12 个月的开发计划
+    validations:
+      required: true
+
+  - type: textarea
+    id: maintainers
+    attributes:
+      label: 维护团队
+      description: |
+        列出主要维护者（至少 1 名）：
+        - 姓名 / GitHub ID
+        - 职责
+        - 承诺维护时长
+      placeholder: |
+        - @username1 — 核心开发，承诺维护 12 个月
+        - @username2 — 文档维护，承诺维护 6 个月
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: compliance-check
+    attributes:
+      label: 准入标准自查
+      description: 请确认项目满足以下准入标准
+      options:
+        - label: 使用 OSI 批准的开源许可证
+          required: true
+        - label: 项目可独立构建运行
+          required: true
+        - label: 开源版功能完整，非演示版
+          required: true
+        - label: 所有依赖项许可证兼容
+          required: true
+        - label: 贡献者已签署 DCO
+          required: true
+        - label: 至少 1 名维护者承诺持续维护
+          required: true
+
+  - type: textarea
+    id: additional-info
+    attributes:
+      label: 补充信息
+      description: 任何你认为有助于审核的信息（社区规模、媒体报道、用户反馈等）
+
+  - type: checkboxes
+    id: agreement
+    attributes:
+      label: 入驻承诺
+      options:
+        - label: 我理解并同意 ITrs 不主张项目知识产权，项目版权归原作者所有
+          required: true
+        - label: 我理解项目将进入孵化期，须满足活跃要求方可成为正式项目
+          required: true
+        - label: 我承诺遵守 ITrs 社区行为准则
+          required: true
+        - label: 我理解可随时通过提交 Issue 退出，无任何绑定
+          required: true

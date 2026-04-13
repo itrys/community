@@ -1,0 +1,24 @@
+# ITrs Community CODEOWNERS
+#
+# 代码审查权限配置
+# 格式：文件/目录模式  @审查者
+# 详见：https://docs.gitee.com/help/articles/4274
+
+# 治理文档 — 需指导委员会成员审查
+/GOVERNANCE.md          @itrys-steering
+/CODE_OF_CONDUCT.md     @itrys-steering
+/SECURITY.md            @itrys-steering
+
+# 贡献与支持文档 — 需维护者审查
+/CONTRIBUTING.md        @itrys-maintainers
+/SUPPORT.md             @itrys-maintainers
+/MAINTAINERS.md         @itrys-steering
+
+# 入驻申请模板 — 需 PMC 审查
+/.gitee/                @itrys-pmc
+
+# README — 所有人可审查
+/README.md              @itrys-maintainers
+
+# 默认 — 所有维护者
+*                       @itrys-maintainers
